@@ -30,6 +30,7 @@ module Pod
       end
 
       def podfile_from_spec(path, spec_name, platform_name, deployment_target, subspecs, sources)
+
         Pod::Podfile.new do
           sources.each { |s| source s }
           platform(platform_name, deployment_target)

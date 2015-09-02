@@ -28,7 +28,7 @@ module Pod
         @mangle = argv.flag?('mangle', true)
         @name = argv.shift_argument
         @source = argv.shift_argument
-        @spec_sources = argv.option('spec-sources', 'https://github.com/CocoaPods/Specs.git').split(',')
+        @spec_sources = argv.option('spec-sources', SourcesManager.all.map(&:url).join(',')).split(',')
 
         subspecs = argv.option('subspecs')
         @subspecs = subspecs.split(',') unless subspecs.nil?
